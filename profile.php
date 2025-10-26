@@ -1,37 +1,38 @@
-<!DOCTYPE html>
-<html>
+<div class="registration-form">
+    <form>
+        <div class="text-center mb-4">
+            <label for="profilePic" style="cursor: pointer;">
+                <img src="assets/img/team/1.jpg" alt="User Icon"
+                    class="rounded-circle mx-auto d-block mb-4"
+                    style="width: 100px; height: 100px; object-fit: cover;">
+            </label>
+        </div>
+        <div class="text-center mb-3">
+            <h4 class="fs-5 fw-bold text-primary">Email</h4>
+            <p class="text-muted">erditya@example.com</p>
+        </div>
+        <div class="text-center mb-3">
+            <h4 class="fs-5 fw-bold text-primary">Password</h4>
+            <p class="text-muted">••••••••</p>
+        </div>
+        <div class="text-center mb-3">
+            <h4 class="fs-5 fw-bold text-primary">Username</h4>
+            <p class="text-muted">Erditya_28</p>
+        </div>
 
 
+        <div class="text-center mb-3">
+            <h4 class="fs-5 fw-bold text-primary">Telpon</h4>
+            <p class="text-muted">+62 812-3456-7890</p>
+        </div>
 
-<body>
-    <div class="registration-form">
-        <form>
-            <div class="form-icon">
-                <span><i class="icon icon-user"></i></span>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control item" id="username" placeholder="Username">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control item" id="password" placeholder="Password">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control item" id="email" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control item" id="phone-number" placeholder="Phone Number">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control item" id="birth-date" placeholder="Birth Date">
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-block create-account">Create Account</button>
-            </div>
-        </form>
-    </div>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script src="js/scriptt.js"></script>
-</body>
+        <div class="text-center mb-3">
+            <h4 class="fs-5 fw-bold text-primary">Alamat</h4>
+            <p class="text-muted">Jl. kendong, No. 123, Kota Matarm</p>
+        </div>
 
-</html>
+        <div class="form-group text-center mt-4">
+            <a href="?page=edit_profile" class="btn btn-primary">Edit Profile</a>
+        </div>
+    </form>
+</div>

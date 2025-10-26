@@ -2,20 +2,25 @@
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6">
-                <img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." />
+                <img class="card-img-top mb-5 mb-md-0" src="assets/img/avanza.png" alt="..." />
             </div>
             <div class="col-md-6">
                 <form>
                     <div class="card-body">
-                        <div class="small mb-1">SKU: BST-498</div>
-                        <h1 class="display-5 fw-bolder">Shop item template</h1>
-                        <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">$45.00</span>
-                            <span>$40.00</span>
+                        <div class="mb-4">
+                            <h1 class="display-5 fw-bolder mb-2">Avanza</h1>
+                            <div class="fs-5 mb-3">
+                                <span>Rp.400.000</span>
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="idmobil" class="form-label">ID Mobil</label>
                             <input type="text" class="form-control item" id="idmobil" placeholder="Masukkan ID Mobil">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="idmobil" class="form-label">Nama</label>
+                            <input type="text" class="form-control item" id="idmobil" placeholder="Masukkan Nama">
                         </div>
 
                         <div class="mb-3">
@@ -60,12 +65,7 @@
                             <label for="duras" class="form-label">Durasi Pinjaman</label>
                             <input type="text" class="form-control item" id="duras" placeholder="" , disabled>
                         </div>
-                        <div class="d-flex">
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                                <i class="bi-cart-fill me-1"></i>
-                                Pesan Sekarang
-                            </button>
-                        </div>
+                        <a href="#" class="btn btn-primary">Pesan Sekarang</a>
                     </div>
                 </form>
             </div>
