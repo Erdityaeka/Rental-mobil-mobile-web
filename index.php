@@ -1,2 +1,2 @@
 <?php
-header("Location: media.php");
+header("Location: login.php");

@@ -34,5 +34,8 @@
         <div class="form-group text-center mt-4">
             <a href="?page=edit_profile" class="btn btn-primary">Edit Profile</a>
         </div>
+        <div class="form-group text-center mt-4">
+            <a href="login.php" class="btn btn-danger">Log out</a>
+        </div>
     </form>
 </div>
