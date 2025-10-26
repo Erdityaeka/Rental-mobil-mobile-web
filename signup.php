@@ -13,7 +13,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            
+
         }
 
         .login-card {
@@ -77,6 +77,10 @@
             <div class="mb-3 text-start">
                 <label for="Telpon" class="form-label">Telpon</label>
                 <input type="text" name="Telpon" id="Telpon" class="form-control" placeholder="Masukkan Telpon" required>
+            </div>
+            <div class="mb-3 text-start">
+                <label for="alamat" class="form-label">Alamat</label>
+                <textarea name="alamat" id="alamat" class="form-control" rows="3" placeholder="Alamat Lengkap" required></textarea>
             </div>
             <div class="mb-4 text-start">
                 <label for="inputGroupFile02" class="form-label">Foto</label>
