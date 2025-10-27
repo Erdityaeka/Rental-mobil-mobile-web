@@ -28,7 +28,6 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -68,11 +67,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    
+
     <!-- jQuery dan Moment wajib sebelum daterangepicker -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="plugins/moment/moment.min.js"></script>
-    
+
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script src="js/scriptt.js"></script>

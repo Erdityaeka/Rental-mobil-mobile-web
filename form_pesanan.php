@@ -58,9 +58,7 @@
                         <label>Foto KTP</label>
                         <div class="input-group mb-3">
                             <input type="file" class="form-control" id="inputGroupFile02" />
-                            <label class="input-group-text" for="inputGroupFile02">Upload</label>
                         </div>
-
                         <div class="mb-3">
                             <label for="duras" class="form-label">Durasi Pinjaman</label>
                             <input type="text" class="form-control item" id="duras" placeholder="" , disabled>
