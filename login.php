@@ -59,6 +59,10 @@
 <body>
 
     <div class="login-card text-center">
+        
+        <img src="assets/img/logo.png" alt="User Icon"
+            class="rounded-circle mx-auto d-block mb-4"
+            style="width: 100px; height: 100px; object-fit: cover;">
         <h3>Login Akun</h3>
         <form action="proses_login.php" method="POST">
             <div class="mb-3 text-start">
@@ -72,7 +76,7 @@
             <a href="media.php" class="btn btn-login w-100">Masuk</a>
             <div class="mt-3 text-center">
                 <span>Belum punya akun?</span>
-                <a href="signup.php" class="text-primary fw-bold">Bikin Akun</a>
+                <a href="signup.php" class="text-primary fw-bold">Buat Akun</a>
             </div>
         </form>
     </div>

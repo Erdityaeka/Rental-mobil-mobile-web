@@ -60,6 +60,9 @@
 <body>
 
     <div class="login-card text-center">
+        <img src="assets/img/logo.png" alt="User Icon"
+            class="rounded-circle mx-auto d-block mb-4"
+            style="width: 100px; height: 100px; object-fit: cover;">
         <h3>Register Akun</h3>
         <form action="proses_login.php" method="POST" enctype="multipart/form-data">
             <div class="mb-3 text-start">
@@ -86,11 +89,11 @@
                 <label for="inputGroupFile02" class="form-label">Foto</label>
                 <input type="file" class="form-control" id="inputGroupFile02" name="foto" accept="image/*">
             </div>
-            <button type="submit" class="btn btn-login w-100">Masuk</button>
+            <button type="submit" class="btn btn-login w-100">Login</button>
 
             <div class="mt-3 text-center">
                 <span>Sudah punya akun?</span>
-                <a href="login.php" class="text-primary fw-bold">Masuk Akun</a>
+                <a href="login.php" class="text-primary fw-bold">Login Akun</a>
             </div>
         </form>
     </div>
