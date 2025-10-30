@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -59,12 +60,47 @@
 <body>
 
     <div class="login-card text-center">
-        
+
         <img src="assets/img/logo.png" alt="User Icon"
             class="rounded-circle mx-auto d-block mb-4"
             style="width: 100px; height: 100px; object-fit: cover;">
         <h3>Login Akun</h3>
-        <form action="proses_login.php" method="POST">
+        <?php
+        session_start();
+        include 'conect.php';
+
+        if (isset($_POST['login'])) {
+            $email    = mysqli_real_escape_string($koneksi, $_POST['email']);
+            $password = md5($_POST['password']); // hash dulu dengan md5
+
+            // Cek di tabel admin
+            $query_admin = mysqli_query($koneksi, "SELECT * FROM admin WHERE email = '$email' AND password = '$password'");
+            if (mysqli_num_rows($query_admin) > 0) {
+                $admin = mysqli_fetch_assoc($query_admin);
+                $_SESSION['email'] = $admin['email'];
+                $_SESSION['role']  = 'admin';
+                header("Location: admin/media.php");
+                exit;
+            }
+
+            // Cek di tabel pelanggan
+            $query_pelanggan = mysqli_query($koneksi, "SELECT * FROM pelanggan WHERE email = '$email' AND password = '$password'");
+            if (mysqli_num_rows($query_pelanggan) > 0) {
+                $pelanggan = mysqli_fetch_assoc($query_pelanggan);
+                $_SESSION['email'] = $pelanggan['email'];
+                $_SESSION['role']  = 'user';
+                header("Location: media.php");
+                exit;
+            }
+
+            // Jika tidak ditemukan di kedua tabel
+            echo "<div class='alert'>Email atau password salah!</div>";
+        }
+        ?>
+
+
+
+        <form action="" method="POST">
             <div class="mb-3 text-start">
                 <label for="email" class="form-label">Email</label>
                 <input type="text" name="email" id="email" class="form-control" placeholder="Masukkan Email" required>
@@ -73,7 +109,7 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" name="password" id="password" class="form-control" placeholder="Masukkan password" required>
             </div>
-            <a href="media.php" class="btn btn-login w-100">Masuk</a>
+            <button type="submit" name="login" class="btn">Login</button>
             <div class="mt-3 text-center">
                 <span>Belum punya akun?</span>
                 <a href="signup.php" class="text-primary fw-bold">Buat Akun</a>
