@@ -64,10 +64,46 @@
             class="rounded-circle mx-auto d-block mb-4"
             style="width: 100px; height: 100px; object-fit: cover;">
         <h3>Register Akun</h3>
-        <form action="proses_login.php" method="POST" enctype="multipart/form-data">
+
+        <?php
+        include "conect.php"; // pastikan file koneksi sudah ada
+
+        if (isset($_POST['simpan'])) {
+            // Ambil data dari form
+            $email = $_POST['email'];
+            $password = md5($_POST['password']);
+            $username = $_POST['username'];
+            $telpon = $_POST['telpon'];
+            $jenis_kelamin = $_POST['jenis_kelamin'];
+            $alamat = $_POST['alamat'];
+            $foto = $_FILES['foto']['name'];
+            $tmp = $_FILES['foto']['tmp_name'];
+
+            $role = "user"; // role otomatis user
+
+            // Query untuk tabel pelanggan
+            $insert_pelanggan = "INSERT INTO pelanggan (email, password, username, telpon, jenis_kelamin, alamat, foto, role) 
+                                VALUES ('$email', '$password', '$username', '$telpon', '$jenis_kelamin', '$alamat', '$foto', '$role')";
+
+            // Query untuk tabel admin
+            $insert_admin = "INSERT INTO admin (email, password, username, telpon, jenis_kelamin, alamat, foto, role) 
+                             VALUES ('$email', '$password', '$username', '$telpon', '$jenis_kelamin', '$alamat', '$foto', '$role')";
+
+            // Eksekusi kedua query
+            if (mysqli_query($koneksi, $insert_pelanggan) && mysqli_query($koneksi, $insert_admin)) {
+                // Upload foto ke folder jika berhasil
+                move_uploaded_file($tmp, "assets/img/user/$foto");
+                echo "<div class='alert alert-success'>Registrasi berhasil! <a href='login.php'>Login sekarang</a></div>";
+            } else {
+                echo "<div class='alert alert-danger'>Registrasi gagal: " . mysqli_error($koneksi) . "</div>";
+            }
+        }
+        ?>
+
+        <form action="" method="POST" enctype="multipart/form-data">
             <div class="mb-3 text-start">
                 <label for="Email" class="form-label">Email</label>
-                <input type="text" name="Email" id="Email" class="form-control" placeholder="Masukkan Email" required>
+                <input type="text" name="email" id="Email" class="form-control" placeholder="Masukkan Email" required>
             </div>
             <div class="mb-3 text-start">
                 <label for="password" class="form-label">Password</label>
@@ -75,12 +111,24 @@
             </div>
             <div class="mb-3 text-start">
                 <label for="Username" class="form-label">Username</label>
-                <input type="text" name="Username" id="Username" class="form-control" placeholder="Masukkan Username" required>
+                <input type="text" name="username" id="Username" class="form-control" placeholder="Masukkan Username" required>
             </div>
             <div class="mb-3 text-start">
                 <label for="Telpon" class="form-label">Telpon</label>
-                <input type="text" name="Telpon" id="Telpon" class="form-control" placeholder="Masukkan Telpon" required>
+                <input type="text" name="telpon" id="Telpon" class="form-control" placeholder="Masukkan Telpon" required>
             </div>
+            <div class="mb-3 text-start">
+                <label>
+                    <input type="radio" name="jenis_kelamin" value="Laki-laki" required>
+                    Laki-laki
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="jenis_kelamin" value="Perempuan">
+                    Perempuan
+                </label>
+            </div>
+
             <div class="mb-3 text-start">
                 <label for="alamat" class="form-label">Alamat</label>
                 <textarea name="alamat" id="alamat" class="form-control" rows="3" placeholder="Alamat Lengkap" required></textarea>
@@ -89,7 +137,7 @@
                 <label for="inputGroupFile02" class="form-label">Foto</label>
                 <input type="file" class="form-control" id="inputGroupFile02" name="foto" accept="image/*">
             </div>
-            <button type="submit" class="btn btn-login w-100">Login</button>
+            <button name="simpan" type="submit" class="btn btn-login w-100">Register</button>
 
             <div class="mt-3 text-center">
                 <span>Sudah punya akun?</span>
